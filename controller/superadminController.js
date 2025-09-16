@@ -1,7 +1,7 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import crypto from "crypto";
-import { Superadmin } from "../models/superadmin.js";
+import { Superadmin } from "../models/Superadmin.js";
 import { sendEmail } from "../utils/email.js";
 
 const JWT_SECRET = process.env.JWT_SECRET || "yoursecretkey";
@@ -90,7 +90,6 @@ export const superadminResetPassword = async (req, res) => {
     res.status(500).json({ message: "Reset failed", error: err.message });
   }
 };
-
 
 export const verifySuperadmin = (req, res, next) => {
   const authHeader = req.headers.authorization;

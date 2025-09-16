@@ -1,7 +1,7 @@
 // middlewares/authMiddleware.js
 import jwt from "jsonwebtoken";
 import { Doctor } from "../models/doctorSchema.js";
-import { Superadmin } from "../models/superadmin.js";
+import { Superadmin } from "../models/Superadmin.js";
 
 const JWT_SECRET = process.env.JWT_SECRET || "yoursecretkey";
 
