@@ -11,13 +11,16 @@ export function getTransporter() {
   }
 
   return nodemailer.createTransport({
-    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false, // Use 'true' for port 465, 'false' for all other ports like 587
     auth: {
       user: EMAIL_USER,
       pass: EMAIL_PASS,
     },
   });
 }
+ 
 
 export async function sendEmail({ to, subject, html }) {
   const transporter = getTransporter();
